@@ -105,13 +105,13 @@
             </div>
             
             <div class="contact-form">
-                <!-- We removed the Formspree action. JavaScript will now handle this form -->
-                <form id="backend-contact-form">
-                    <input type="text" name="name" placeholder="Designation / Name" required>
-                    <input type="email" name="email" placeholder="Return Address (Email)" required>
-                    <textarea name="message" placeholder="Transmission Details..." style="min-height: 120px;" required></textarea>
-                    <button type="submit" id="submit-btn">Transmit Message</button>
-                </form>
+                
+              <form action="https://formspree.io/f/xojbggkq" method="POST">
+    <input type="text" name="name" placeholder="Designation / Name" required>
+    <input type="email" name="email" placeholder="Return Address (Email)" required>
+    <textarea name="message" placeholder="Transmission Details..." style="min-height: 120px;" required></textarea>
+    <button type="submit">Transmit Message</button>
+</form>
             </div>
         </div>
     </section>
