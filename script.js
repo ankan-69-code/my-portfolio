@@ -136,7 +136,7 @@ document.getElementById('backend-contact-form').addEventListener('submit', async
 
     try {
         // Send data to your Python backend running on localhost
-        const response = await fetch('http://localhost:5000/api/contact', {
+        const response = await fetch('https://my-portfolio-1-we07.onrender.com/api/contact', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(data)
