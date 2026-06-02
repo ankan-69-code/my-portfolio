@@ -123,41 +123,4 @@ fadeUpItems.forEach(item => {
     );
 });
 
-// 5. Backend Fetch Integration (Sends form data to your Python Server)
-document.getElementById('backend-contact-form').addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevents the page from refreshing
-    
-    const btn = document.getElementById('submit-btn');
-    btn.innerText = "Transmitting...";
-    
-    // Gather form data
-    const formData = new FormData(e.target);
-    const data = Object.fromEntries(formData.entries());
 
-    try {
-        // Send data to your Python backend running on localhost
-        const response = await fetch('https://my-portfolio-1-we07.onrender.com/api/contact', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(data)
-        });
-
-        if (response.ok) {
-            btn.innerText = "Message Sent!";
-            btn.style.backgroundColor = "#28a745"; // Turns green on success
-            e.target.reset(); // Clears the form
-        } else {
-            throw new Error('Server error');
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        btn.innerText = "Error - Try Again";
-        btn.style.backgroundColor = "black";
-    }
-
-    // Reset button UI after 3 seconds
-    setTimeout(() => {
-        btn.innerText = "Transmit Message";
-        btn.style.backgroundColor = "var(--accent)";
-    }, 3000);
-});
